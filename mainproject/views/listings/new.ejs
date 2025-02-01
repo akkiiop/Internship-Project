@@ -1,0 +1,54 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<div class="container">
+ 
+    <h3 class="mb-4 mt-3">Create a New Listing</h3>
+    <!-- nonvalidate removes default browser validation settings
+    class need-validations adds bootstramp styling of validation -->
+        <form method="POST" action="/listings" novalidate class="needs-validation">
+     
+
+      <div class="mb-3">  
+        <label for="title" class="form-label"> <b>Title</b> </label>
+        <input name="listing[title]" placeholder="enter title"  type="text"  class="form-control" required/>
+        <!-- these are bootstramp validation text -->
+        <div class="valid-feedback">Title looks good</div> 
+      </div>
+      
+      <div class="mb-3">
+        <label for="description" class="form-label"> <b>Description</b> </label>
+        <textarea name="listing[description]" placeholder="enter description"  class="form-control" required></textarea>
+        <div class="invalid-feedback">Please Enter Short Description</div>
+      </div>
+      
+
+      <div class="mb-3">
+        <label for="image" class="form-label"> <b>Image URL</b></label>
+        <input name="listing[image]" placeholder="Image Url " type="text" class="form-control" />
+      </div>
+
+      <div class="row">  
+
+        <div class="mb-3 col-md-4">
+          <label for="price" class="form-label"> <b>Price</b> </label>
+          <input name="listing[price]" placeholder="3500"  class="form-control" required/>
+        </div>
+
+        <div class="mb-3 col-md-8" > 
+          <label for="country" class="form-label"> <b>Country</b> </label>
+          <input name="listing[country]" placeholder="India" type="text"  class="form-control" required/>
+          <div class="invalid-feedback">Country name should be valid</div>
+        </div>
+
+      </div>
+      
+      <div class="mb-3">
+        <label for="location" class="form-label"> <b>Location</b> </label>
+        <input name="listing[location]" placeholder="Current Location" type="text"  class="form-control"  required />
+        <div class="invalid-feedback">Location should be valid</div>
+      </div>
+
+      <button class="btn btn-success mt-3">Add</button>
+      <br><br>
+    </form>
+  
+</div>
